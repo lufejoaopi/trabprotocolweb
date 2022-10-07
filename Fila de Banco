@@ -36,4 +36,40 @@ typedef struct{
 	
 }Pilha;
 
+void inserirfila(No **fila, int num){
+	No *aux , *novo = malloc(sizeof(No));
+	if(novo){
+		novo->valor = num;
+		novo->proximo = NULL;
+		if (*fila == NULL){
+			*fila = novo;
+		}else{
+			aux = *fila;
+			while(aux->proximo){
+				aux = aux->proximo;
+				aux->proximo = novo;
+			}
+		}
+	}
+	else{
+		printf("\n Invalidado..");
+	}
+}
 
+No* removerfila(No **fila){
+	
+	No *remover = NULL;
+	
+	if(*fila){
+		remover = *fila;
+		*fila = remover->proximo;
+	}else{
+		printf("\nfila vazia\n");
+		return remover;
+	}
+	
+	
+}
+
+
+void imprimir(No *fila){
