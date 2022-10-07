@@ -1,4 +1,39 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+//Professor usa o codigo no https://www.onlinegdb.com/online_c_compiler
 
-01
-256576
-eu
+
+typedef struct no{
+	
+	int valor ;
+	
+	struct no *proximo;
+}No;
+
+typedef struct{
+	int  numero ,saldo , titular ;
+
+}Conta;
+
+typedef struct{
+	char nome[50], cpf[12] ,tipopessoa[40],gerente[40] ,agencia[40];
+	char sol1[20], sol2[20], sol3[20] , sol4[20];
+	Conta conta;
+	
+}Pessoa;
+
+typedef struct noo{
+	
+	Pessoa p;
+	struct noo *proximoo;
+	
+}Noo;
+
+typedef struct{
+	Noo *topo;
+	int tamm;
+	
+}Pilha;
+
+
