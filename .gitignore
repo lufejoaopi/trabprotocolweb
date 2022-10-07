@@ -1,5 +1,5 @@
 
-eu estive aqui
+
 # Object files
 *.o
 *.ko
@@ -7,6 +7,10 @@ eu estive aqui
 *.elf
 
 # Linker output
+
+
+
+
 *.ilk
 *.map
 *.exp
@@ -15,9 +19,7 @@ eu estive aqui
 *.gch
 *.pch
 
-# Libraries
-*.lib
-*.a
+
 *.la
 *.lo
 
