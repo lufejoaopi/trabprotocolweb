@@ -73,3 +73,97 @@ No* removerfila(No **fila){
 
 
 void imprimir(No *fila){
+Noo *auxx = p->topo;
+	printf("\n--------------- PESSOA ADCIONADA  tam: %d --------------\n" ,p->tamm );
+	while(auxx){
+		imprimirpessoa(auxx->p);
+		auxx = auxx->proximoo;
+		
+	}
+	
+	
+	printf("\n---------------FIM DO PROCESSO--------------\n");
+	;
+	
+}
+
+int main(){
+	Noo *remover;
+    Pilha p;
+	No *r ,*fila = NULL;
+	int opcao, valor;
+	
+	criarpilha(&p);
+	
+	do{
+		printf("\n|----BEM VINDO AO SEU BANCO 24 HORAS----|");
+		printf("\n|----    O   QUE VOCE DESEJA?       ----|");
+		printf("\n\t0 - Sair \n\t1 - Inserir Pessoa na fila\n\t2 - Remover/Alterar da fila \n\t3 - Imprimir quantos estao na fila\n\t4 - Preencher e solicitar\n\t5 - Deletar/Alterar dados preenchidos e solicitados\n\t6 - Imprimir Dados e Solicitacoes\n");
+	    scanf("%d", &opcao);
+	    
+	    switch(opcao){
+	    	
+	    	case 1:
+	    		printf("Digite seu numero de ordem de chamada para entrar na fila:");
+	    		scanf("%d", &valor);
+	    		inserirfila(&fila, valor);
+	    		
+	    		break;
+	    		
+	    	case 2:
+	    		r = removerfila(&fila);
+	    		if(r){
+	    			printf("removido; %d\n" , r->valor);
+	    			free(r);
+	    		
+				}
+				
+	    		break;
+			
+			case 3:
+				imprimir(fila);
+				
+				break;
+			
+			case 4:
+			empilhar(&p);
+			
+			break;
+		    case 5:
+			remover = desempilhar(&p);
+			if(remover){
+				printf("\nRemovido com sucesso\n");
+				imprimirpessoa(remover->p);
+				
+				free(remover);
+				
+			}else{
+				printf("\n no nao existente.\n");
+				
+			}
+			break;
+		    case 6:
+			imprimirpilha(&p);
+			
+			break;	
+				
+
+			default:
+				if(opcao != 0){
+					printf("\ninvalido\n");
+				}
+				
+				break;
+				
+	    		
+	    		
+	    		
+	    		
+		}
+	    
+	}while(opcao != 0);
+	
+	
+	system ("clear");
+	return 0;
+}
