@@ -4,13 +4,13 @@
 *.o
 *.ko
 *.obj
-joao pe de feijao
+*.elf
 
 # Linker output
 
 eu sou  lindo
 
-
+tudo
 *.ilk
 *.map
 *.exp
@@ -28,7 +28,7 @@ eu sou  lindo
 *.so
 *.so.*
 *.dylib
-
+tudo bom pipoca e bom
 # Executables
 *.exe
 *.out
