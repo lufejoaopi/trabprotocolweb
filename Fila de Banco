@@ -73,7 +73,119 @@ No* removerfila(No **fila){
 
 
 void imprimir(No *fila){
-Noo *auxx = p->topo;
+
+	
+	printf("\t--------FILA---------\n\t");
+	while(fila){
+		printf("%d", fila->valor);
+		fila = fila->proximo;
+	}
+	printf("\n\t--------FINAL DA FILA---------\n");
+	
+}
+
+void criarpilha(Pilha *p){
+	p->topo = NULL;
+	p->tamm = 0;
+	
+	
+}
+
+Pessoa lerpessoa(){
+	Pessoa p;
+	printf("\n------------------------------------");
+	printf("\nInserçao de Dados Pessoais\n");
+	printf("\nDigite seu primeiro nome :\n");
+	scanf("%s", &p.nome);
+	printf("\nDigite seu cpf :\n");
+	scanf("%s", &p.cpf);
+	printf("\nSe encontra como cliente , atendente ou gerente:\n");
+	scanf("%s", &p.tipopessoa);
+	printf("\nQual o seu gerente :\n");
+	scanf("%s", &p.gerente);
+	printf("\nDigite o nome da agencia :\n");
+	scanf("%s", &p.agencia);
+	printf("\nInserçao de Dados da Conta\n");
+	printf("\nDigite o numero da conta :\n");
+	scanf("%d", &p.conta.numero);
+	printf("\nDigite a quantia do seu saldo :\n");
+	scanf("%d", &p.conta.saldo);
+	printf("\nDigite quantos sao titulares da conta :\n");
+	scanf("%d", &p.conta.titular);
+	printf("\nDefinicao de solicitacoes:\n");
+	printf("\nDeseja fazer cheque : S-sim N-nao\n");
+	scanf("%s", &p.sol1);
+	printf("\nDeseja fazer saque : S-sim N-nao\n");
+	scanf("%s", &p.sol2);
+	printf("\nDeseja fazer deposito : S-sim N-nao\n");
+	scanf("%s", &p.sol3);
+	printf("\nDeseja fazer o canxelamento do cartao : S-sim N-nao\n");
+	scanf("%s", &p.sol4);
+	
+	return p;
+	
+	
+}
+
+void imprimirpessoa(Pessoa p){
+    printf("\n------------------------------------");
+	printf("\nDados Pessoais");
+	printf("\nNome: %s",p.nome);
+	printf("\nCPF: %s",p.cpf);
+	printf("\nTipo de sujeito: %s",p.tipopessoa);
+	printf("\nGerencia: %s",p.gerente);
+	printf("\nNome do banco: %s",p.agencia);
+	printf("\nDados da Conta");
+	printf("\nNumero da Conta: %d",p.conta.numero);
+	printf("\nSaldo: %d",p.conta.saldo);
+	printf("\nQuantidade de titulares: %d",p.conta.titular);
+	printf("\nSolicitacoes:");
+	printf("\nSolicitacao de cheque: %s",p.sol1);
+	printf("\nSolicitacao de saque: %s",p.sol2);
+	printf("\nSolicitacao de deposito: %s",p.sol3);
+	printf("\nSolicitacao de cancelamento: %s",p.sol4);
+	printf("\n------------------------------------");
+}
+
+void empilhar(Pilha *p){
+	
+	
+	Noo *novo = malloc(sizeof(Noo));
+	
+	if(novo){
+		novo->p = lerpessoa();
+		novo->proximoo = p->topo;
+		p->topo = novo;
+		p->tamm++;
+		
+	}else{
+		printf("\nerro..\n");
+		
+	}
+	
+}
+
+Noo* desempilhar(Pilha *p){
+	if(p->topo){
+		Noo *removerr = p->topo;
+		p->topo = removerr->proximoo;
+		p->tamm--;
+		return removerr;
+		
+		
+	}else{
+		printf("\vazio!\n");
+		
+	return NULL;
+	}
+	
+	
+	
+	
+}
+
+void imprimirpilha(Pilha *p){
+	Noo *auxx = p->topo;
 	printf("\n--------------- PESSOA ADCIONADA  tam: %d --------------\n" ,p->tamm );
 	while(auxx){
 		imprimirpessoa(auxx->p);
