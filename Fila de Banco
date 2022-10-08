@@ -128,7 +128,7 @@ Pessoa lerpessoa(){
 }
 
 void imprimirpessoa(Pessoa p){
-    printf("\n------------------------------------");
+    printf("\n------------------------------------\n");
 	printf("\nDados Pessoais");
 	printf("\nNome: %s",p.nome);
 	printf("\nCPF: %s",p.cpf);
@@ -144,7 +144,7 @@ void imprimirpessoa(Pessoa p){
 	printf("\nSolicitacao de saque: %s",p.sol2);
 	printf("\nSolicitacao de deposito: %s",p.sol3);
 	printf("\nSolicitacao de cancelamento: %s",p.sol4);
-	printf("\n------------------------------------");
+	printf("\n------------------------------------\n\n");
 }
 
 void empilhar(Pilha *p){
